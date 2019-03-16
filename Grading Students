@@ -1,0 +1,45 @@
+
+                              //Grading Students
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main()
+{
+    int grades_count;
+     int i,j,temp;
+     scanf("%d",&grades_count);
+     int result[grades_count];
+     int *grades =malloc(sizeof(int)*grades_count );
+     for(i=0;i<grades_count;i++)
+     {
+        scanf("%d",&grades[i]);
+     }
+     for(i=0;i<grades_count;i++){
+         if(grades[i]%5!=0)
+         {
+             temp=grades[i];
+            while(temp%5!=0)
+             {
+                temp++;
+            }
+             if((temp-grades[i])<3 && temp>=40)
+             {
+                result[i]=temp;
+             }
+             else
+                result[i]=grades[i];
+
+        }
+        else
+             result[i]=grades[i];
+     }
+        for(i=0;i<grades_count;i++)
+        {
+            printf("%d\n",result[i]);
+        }
+
+
+    free(grades);
+    return 0;
+}
