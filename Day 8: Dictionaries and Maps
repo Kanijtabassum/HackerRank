@@ -1,0 +1,35 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <map>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    int i,n;
+  
+    cin>>n;
+    
+    map<string, int> phone_book;
+    for(size_t i=0;i<n;i++)
+    {
+    string name;
+    cin>>name;
+    int num;
+    cin>>num;
+        phone_book[name]=num;
+    }
+    string name;
+    while(cin>>name)
+    {
+        if(phone_book.find(name)==phone_book.end())
+            cout<<"Not found"<<endl;
+        else
+            cout<< name << "=" << phone_book[name] << endl;
+    }
+    return 0;
+}
+
